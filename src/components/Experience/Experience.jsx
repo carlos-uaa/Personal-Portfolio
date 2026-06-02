@@ -7,7 +7,7 @@ function Experience() {
             id: 1,
             role: "FullStack Web Developer",
             company: "Grupo SINCO",
-            period: "December 2022 - May 2026",
+            period: "December 2022 - Present",
             description: "* Sole developer for enterprise applications, managing the full lifecycle from product requirements to deployment. \n * Designed and built scalable solutions using .NET Entity Framework Core, Blazor, Angular and Node.js. \n * Conducted API and client unit testing to ensure high-quality production deployments. \n * Provided production support and resolved critical bugs under tight deadlines.\n * Collaborated with cross-functional teams on system design and software architecture."
         },
         {
