@@ -1,16 +1,34 @@
-# React + Vite
+# 🚀 Mi Portafolio Profesional
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a mi portafolio! Este proyecto es una Single Page Application (SPA) diseñada para presentar mis habilidades, trayectoria y los proyectos de software que he desarrollado.
 
-Currently, two official plugins are available:
+El objetivo principal de este repositorio es servir como vitrina interactiva para reclutadores y líderes técnicos, demostrando la aplicación de buenas prácticas de desarrollo en el frontend.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🛠️ Tecnologías Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+El proyecto fue construido utilizando el ecosistema moderno de JavaScript para asegurar un rendimiento óptimo y una excelente experiencia de desarrollo:
 
-## Expanding the ESLint configuration
+*   **React** (Biblioteca principal para la interfaz de usuario)
+*   **Vite** (Herramienta de empaquetado y entorno de desarrollo ultrarrápido)
+*   **JavaScript (ES6+)**
+*   **SCSS / Estilos:**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Características del Proyecto
+
+*   **Diseño Responsivo:** Adaptado completamente para dispositivos móviles, tablets y pantallas de escritorio.
+*   **Arquitectura Modular:** Componentes de React reutilizables y estructurados de forma limpia.
+*   **Sección de Proyectos Dinámica:** Renderizado eficiente de proyectos a partir de estructuras de datos optimizadas.
+
+---
+
+## 🚀 Instalación y Desarrollo Local
+
+Si deseas clonar este proyecto y ejecutarlo en tu entorno local, sigue estos pasos:
+
+1. **Clonar el repositorio:**
+```bash
+   git clone [https://github.com/TU_USUARIO/TU_REPOSITORIO.git](https://github.com/TU_USUARIO/TU_REPOSITORIO.git)
