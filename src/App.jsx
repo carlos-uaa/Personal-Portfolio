@@ -1,8 +1,8 @@
-import AboutMe from './Components/AboutMe/AboutMe';
-import Experience from './Components/Experience/Experience';
-import Presentation from './Components/Presentation/Presentation';
-import MyProjects from './Components/Projects/MyProjects';
-import TechStack from './Components/TechStack/TechStack';
+import AboutMe from './components/AboutMe/AboutMe';
+import Experience from './components/Experience/Experience';
+import Presentation from './components/Presentation/Presentation';
+import MyProjects from './components/Projects/MyProjects';
+import TechStack from './components/TechStack/TechStack';
 
 function App() {
   return (
