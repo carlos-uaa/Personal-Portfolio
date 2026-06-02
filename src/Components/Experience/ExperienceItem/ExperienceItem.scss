@@ -1,0 +1,68 @@
+.timeline-item {
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &__node {
+        position: absolute;
+        left: -2px;
+        top: 4px;
+        z-index: 2;
+    }
+
+    &__icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 26px;
+        height: 26px;
+        border-radius: var(--radius-full);
+        background-color: var(--color-quaternary);
+        border: 2px solid var(--text-light);
+        color: var(--color-quaternary-contrast);
+        font-size: 0.75rem;
+    }
+
+    &__content {
+        padding-left: 48px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__header {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.4;
+
+        .role {
+        color: var(--color-primary);
+        }
+
+        .separator {
+        color: var(--text-muted);
+        }
+
+        .company {
+        color: var(--color-secondary);
+        }
+    }
+
+    &__date {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-light);
+    }
+
+    &__description {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        max-width: 850px;
+        white-space: pre-line;
+    }
+}

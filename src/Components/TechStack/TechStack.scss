@@ -1,0 +1,109 @@
+.tech-stack-section {
+    max-width: var(--max-width-site);
+    margin: 0 auto;
+    padding: 80px 24px;
+
+    .technologies__title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        color: var(--text-alternative);
+    }
+
+    .tech-stack-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        // Tarjeta contenedora de categoría
+        .tech-card {
+            background-color: var(--bg-surface);
+            border: 1px solid #1E293B;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+            h2 {
+                font-size: 1.8rem;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 2rem;
+                font-family: 'Segoe UI', system-ui, sans-serif;
+
+                &.title-frontend { color: var(--color-success); }
+                &.title-backend { color: var(--color-error); }
+                &.title-toolscloud { color: var(--color-warning); }
+                &.title-learningfocus { color: var(--color-info); }
+            }
+
+            // Contenedor interno de los iconos
+            .technologies-list {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+                justify-items: center;
+
+                .tech-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 0.6rem;
+                    width: 100%;
+                    transition: transform 0.2s ease;
+                    cursor: pointer;
+
+                    &:hover {
+                        transform: translateY(-5px);
+
+                        .tech-name {
+                            color: var(--text-main);
+                        }
+                    }
+
+                    .tech-icon {
+                        font-size: 2.5rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+                    }
+
+                    .tech-name {
+                        font-size: 0.85rem;
+                        font-weight: 500;
+                        color: var(--text-muted);
+                        font-family: system-ui, sans-serif;
+                        text-align: center;
+                        transition: color 0.2s ease;
+                    }
+                }
+            }
+        }
+    }
+    }
+
+    // --- Media Queries ---
+    @media (max-width: 900px) {
+    .tech-stack-section {
+        .tech-stack-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+    }
+    }
+
+    @media (max-width: 480px) {
+    .tech-stack-section {
+        .tech-stack-grid {
+            .tech-card {
+                padding: 1.5rem 1rem;
+
+                .technologies-list {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 1.5rem;
+                }
+            }
+        }
+    }
+}
