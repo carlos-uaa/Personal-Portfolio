@@ -1,4 +1,4 @@
-import photo from '../../assets/profile.jpg';
+import photo from '../../assets/Profile.jpg';
 import './AboutMe.scss';
 
 function AboutMe() {

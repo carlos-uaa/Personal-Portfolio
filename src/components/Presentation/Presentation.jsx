@@ -1,5 +1,5 @@
 /* Data import */
-import photo from '../../assets/profile.jpg';
+import photo from '../../assets/Profile.jpg';
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone } from 'react-icons/fa';
 import './Presentation.scss';
 
