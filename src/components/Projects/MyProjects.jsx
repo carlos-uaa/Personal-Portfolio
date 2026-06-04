@@ -3,6 +3,7 @@ import './MyProjects.scss';
 import { prizePopImages } from '../../assets/PrizePop/PrizePopImages';
 import { proctixImages } from '../../assets/Proctix/ProctixImages';
 import { servonImages } from '../../assets/Servon/ServonImages';
+import { stepAppImages } from '../../assets/SetpApp/StepAppImages'
 
 function MyProjects() {
     const projectsData = [
@@ -15,7 +16,7 @@ function MyProjects() {
                 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop',
                 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop'
             ],
-            technologies: ['blazor', 'csharp', 'sql', 'react'],
+            technologies: ['nodejs', 'sass', 'sql', 'angular'],
             github: [
                 {url: 'https://github.com/tu-usuario/proyecto-ejemplo', name: 'Proyecto Ejemplo'}
             ]
@@ -51,6 +52,17 @@ function MyProjects() {
             github: [
                 {url: 'https://github.com/carlos-uaa/Servon.Client', name: 'Servon.Client'},
                 {url: 'https://github.com/carlos-uaa/Servon.API', name: 'Servon.API'},
+            ]
+        },
+        {
+            id: 5,
+            title: 'StepApp',
+            description: 'StepApp is an intuitive, full-featured task management platform designed to optimize productivity across diverse workflows, extending far beyond software development. Engineered with a clean, user-centric interface, the application delivers a seamless experience for organizing, tracking, and prioritizing daily responsibilities. It was developed with a API in .Net EF Core & a client in React',
+            images: stepAppImages,
+            technologies: ['react', 'sass', 'javascript', 'csharp', 'sql'],
+            github: [
+                {url: 'https://github.com/carlos-uaa/StepApp.Client', name: 'StepApp.Client'},
+                {url: 'https://github.com/carlos-uaa/StepApp.Api', name: 'StepApp.Api'}
             ]
         }
     ];

@@ -3,10 +3,10 @@ import './AboutMe.scss';
 
 function AboutMe() {
     const handleDownloadCV = () => {
-        const pdfUrl = "../../../public/Gómez Hernández, Carlos Antonio CV.pdf";
+        const pdfUrl = "/Gomez_Hernandez_Carlos_Antonio_CV.pdf";
         const link = document.createElement("a");
         link.href = pdfUrl;
-        link.download = "GomezHernandezCarlosAntonio CV.pdf"; // Nombre con el que se guardará
+        link.download = "GomezHernandezCarlosAntonioCV.pdf";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -18,7 +18,6 @@ function AboutMe() {
                 <h1>About Me</h1>
                 <div className="footer">
                     <button className="download-btn" onClick={handleDownloadCV}>
-                        {/* Icono de Documento SVG */}
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"

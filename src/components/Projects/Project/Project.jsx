@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaGithub, FaChevronLeft, FaChevronRight, FaCode, FaDocker } from 'react-icons/fa';
+import { FaGithub, FaChevronLeft, FaChevronRight, FaCode, FaDocker, FaSass } from 'react-icons/fa';
 import { SiBlazor, SiReact, SiAngular, SiNodedotjs, SiJsonwebtokens } from 'react-icons/si';
 import { TbBrandCSharp, TbSql } from 'react-icons/tb';
 import { IoLogoJavascript } from "react-icons/io5";
@@ -9,17 +9,18 @@ import './Project.scss';
 
 const getTechDetails = (tech) => {
     switch (tech.toLowerCase()) {
-        case 'blazor': return { icon: SiBlazor, name: 'Blazor', color: 'var(--color-secondary)' };
-        case 'csharp': return { icon: TbBrandCSharp, name: 'C#', color: 'var(--color-primary)' };
-        case 'sql': return { icon: TbSql, name: 'SQL Server', color: 'var(--color-warning)' };
-        case 'react': return { icon: SiReact, name: 'React', color: 'var(--color-info)' };
-        case 'angular': return { icon: SiAngular, name: 'Angular', color: 'var(--color-error)' };
-        case 'nodejs': return { icon: SiNodedotjs, name: 'Node.js', color: 'var(--color-fifth)' };
-        case 'javascript': return { icon: IoLogoJavascript, name: 'JavaScript', color: 'var(--color-quaternary)' };
-        case 'docker': return { icon: FaDocker, name: 'Docker', color: '#2496ed' };
-        case 'nunit': return { icon: LuTestTubeDiagonal, name: 'nUnit', color: 'var(--color-success)' };
-        case 'xunit': return { icon: LuTestTubeDiagonal, name: 'xUnit', color: 'var(--color-success)' };
-        case 'jwt': return { icon: SiJsonwebtokens, name: 'JWT', color: 'var(--color-success)' };
+        case 'blazor': return { icon: SiBlazor, name: 'Blazor', color: '#9549f7' };
+        case 'csharp': return { icon: TbBrandCSharp, name: 'C#', color: '#985098' };
+        case 'sql': return { icon: TbSql, name: 'SQL Server', color: '#1798dd' };
+        case 'react': return { icon: SiReact, name: 'React', color: '#5ac9e8' };
+        case 'angular': return { icon: SiAngular, name: 'Angular', color: '#dc2e34' };
+        case 'nodejs': return { icon: SiNodedotjs, name: 'Node.js', color: '#86b800' };
+        case 'javascript': return { icon: IoLogoJavascript, name: 'JavaScript', color: '#f0db4f' };
+        case 'docker': return { icon: FaDocker, name: 'Docker', color: '#2092ed' };
+        case 'nunit': return { icon: LuTestTubeDiagonal, name: 'nUnit', color: '#1d9d2c' };
+        case 'xunit': return { icon: LuTestTubeDiagonal, name: 'xUnit', color: '#8351bc' };
+        case 'jwt': return { icon: SiJsonwebtokens, name: 'JWT', color: '#cb1616' };
+        case 'sass': return {icon: FaSass, name: 'Sass', color: '#b93c6a'}
         default: return { icon: FaCode, name: tech, color: 'var(--text-muted)' };
     }
 };
