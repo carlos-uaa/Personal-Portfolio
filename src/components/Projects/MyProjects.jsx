@@ -4,21 +4,19 @@ import { prizePopImages } from '../../assets/PrizePop/PrizePopImages';
 import { proctixImages } from '../../assets/Proctix/ProctixImages';
 import { servonImages } from '../../assets/Servon/ServonImages';
 import { stepAppImages } from '../../assets/SetpApp/StepAppImages'
+import { qualiTrackImages } from '../../assets/QualiTrack/QualiTrackImages';
 
 function MyProjects() {
     const projectsData = [
         {
             id: 1,
-            title: 'Enterprise Management Ecosystem',
-            description: 'A scalable fullstack solution featuring high-performance APIs, robust data automation pipelines, and reactive enterprise dashboards built for optimal workplace efficiency.',
-            images: [
-                'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=600&auto=format&fit=crop'
-            ],
-            technologies: ['nodejs', 'sass', 'sql', 'angular'],
+            title: 'QualiTrack',
+            description: 'A scalable fullstack solution featuring high-performance APIs, robust data automation pipelines, and reactive enterprise dashboards built for optimal workplace efficiency.production-grade enterprise platform designed to automate quality control within the supply chain and manufacturing sectors. The system provides end-to-end management for reporting defective components (NG - Not Good) through the digitization and strict control of the industry-standard Parts Inspection Report (PIR). \nAt the core of the application lies a rigid, linear workflow engine (State Machine) that governs the lifecycle of each affected part. This engine guides users sequentially through critical decision-making processes—ranging from automated supplier notifications (via email and in-system alerts) to the final material disposition, including returns, scrap, rework, or collateral damage claims.',
+            images: qualiTrackImages,
+            technologies: ['csharp', 'nunit', 'blazor', 'xunit', 'sql', 'javascript' ],
             github: [
-                {url: 'https://github.com/tu-usuario/proyecto-ejemplo', name: 'Proyecto Ejemplo'}
+                {url: 'https://github.com/carlos-uaa/QualiTrack.Client', name: 'QualiTrack.Client'},
+                {url: 'https://github.com/carlos-uaa/QualiTrack.API', name: 'QualiTrack.API'}
             ]
         },
         {

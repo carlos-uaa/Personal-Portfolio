@@ -139,6 +139,14 @@
             color: var(--tech-color);
             font-size: 0.95rem;
         }
+
+        &:hover {
+            background-color:var(--tech-color);
+            cursor: pointer;
+            .tech-chip__icon {
+                color: var(--text-alternative);
+            }
+        }
     }
 
   // --- BOTÓN DE GITHUB ---
