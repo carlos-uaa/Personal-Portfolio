@@ -4,7 +4,7 @@ import { prizePopImages } from '../../assets/PrizePop/PrizePopImages';
 import { proctixImages } from '../../assets/Proctix/ProctixImages';
 import { servonImages } from '../../assets/Servon/ServonImages';
 import { stepAppImages } from '../../assets/SetpApp/StepAppImages'
-import { qualiTrackImages } from '../../assets/QualiTrack/QualiTrackImages';
+import { qualiTrackImages } from '../../assets/QualiTrack/qualiTrackImages';
 
 function MyProjects() {
     const projectsData = [
