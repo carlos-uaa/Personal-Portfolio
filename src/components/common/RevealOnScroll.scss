@@ -1,0 +1,42 @@
+.reveal-box {
+  width: 100%;
+  opacity: 0;
+  transition: 
+    opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+    transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+
+  &--up {
+    transform: translateY(45px);
+  }
+
+  &--down {
+    transform: translateY(-45px);
+  }
+
+  &--left {
+    transform: translateX(-45px);
+  }
+
+  &--right {
+    transform: translateX(45px);
+  }
+
+  &--fade {
+    transform: scale(0.95);
+  }
+
+  &--visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-box {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

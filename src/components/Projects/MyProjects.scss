@@ -1,18 +1,89 @@
 .my-projects {
-    max-width: var(--max-width-site);
-    margin: 0 auto;
-    padding: 80px 24px;
+  width: 100%;
+  max-width: var(--max-width-site);
+  margin: 0 auto;
+  padding: 60px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
 
-    &__title {
-        font-size: 2.5rem;
-        font-weight: 800;
-        color: var(--text-alternative);
-        margin-bottom: 40px;
+  &__filters {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      height: 4px;
     }
+  }
+
+  .filter-pill-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: var(--radius-full);
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-light);
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: var(--transition-fast);
+
+    .filter-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1px 7px;
+      font-size: 0.72rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-main);
+    }
+
+    &:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(96, 165, 250, 0.3);
+      color: var(--text-white);
+    }
+
+    &--active {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+
+      .filter-count {
+        background: rgba(255, 255, 255, 0.25);
+        color: #ffffff;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 32px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 16px;
 
     &__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-        gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 24px;
     }
+  }
 }

@@ -1,25 +1,27 @@
 :root {
   /* ========================================== */
-  /* PALETA DE COLORES */
+  /* PALETA DE COLORES PRINCIPAL */
   /* ========================================== */
 
   /* COLOR PRIMARIO */
   --color-primary: #3b82f6;
   --color-primary-light: #60a5fa;
   --color-primary-dark: #1d4ed8;
+  --color-primary-glow: rgba(59, 130, 246, 0.25);
   --color-primary-contrast: #ffffff;
 
   /* COLOR SECUNDARIO */
   --color-secondary: #8b5cf6;
   --color-secondary-light: #a78bfa;
   --color-secondary-dark: #6d28d9;
+  --color-secondary-glow: rgba(139, 92, 246, 0.25);
   --color-secondary-contrast: #ffffff;
 
   /* COLOR TERCIARIO */
-  --color-tertiary: #2f478d;
-  --color-tertiary-light: #465a96;
-  --color-tertiary-dark: #243770;
-  --color-tertiary-contrast: #0f172a;
+  --color-tertiary: #1e293b;
+  --color-tertiary-light: #334155;
+  --color-tertiary-dark: #0f172a;
+  --color-tertiary-contrast: #f8fafc;
 
   /* COLOR CUATERNARIO */
   --color-quaternary: #ec4899;
@@ -27,78 +29,90 @@
   --color-quaternary-dark: #be185d;
   --color-quaternary-contrast: #ffffff;
 
-  /* COLOR QUINTO */
+  /* COLOR QUINTO / ACCENT VERDE */
   --color-fifth: #10b981;
   --color-fifth-light: #34d399;
   --color-fifth-dark: #047857;
-  --color-fifth-contrast: #0f172a;
+  --color-fifth-contrast: #ffffff;
 
-  /* ESTADO: INFO (Azul Cielo Eléctrico) */
+  /* ESTADOS */
   --color-info: #0ea5e9;
   --color-info-light: #38bdf8;
   --color-info-dark: #0369a1;
-  --color-info-contrast: #ffffff;
 
-  /* ESTADO: SUCCESS */
-  --color-success: #22c55e;
-  --color-success-light: #4ade80;
-  --color-success-dark: #15803d;
-  --color-success-contrast: #0f172a;
+  --color-success: #10b981;
+  --color-success-light: #34d399;
+  --color-success-dark: #059669;
 
-  /* ESTADO: WARNING */
-  --color-warning: #f97316;
-  --color-warning-light: #fb923c;
-  --color-warning-dark: #c2410c;
-  --color-warning-contrast: #0f172a;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-dark: #d97706;
 
-  /* ESTADO: ERROR */
   --color-error: #ef4444;
   --color-error-light: #f87171;
-  --color-error-dark: #b91c1c;
-  --color-error-contrast: #ffffff;
+  --color-error-dark: #dc2626;
 
-  /* COLORES NEUTROS */
-  --bg-main: #0f172a;
-  --bg-surface: #212c44;
-  --bg-alternative: #f8fafc;
+  /* COLORES NEUTROS Y SUPERFICIES (DARK GLASS THEME) */
+  --bg-main: #0b1120;
+  --bg-main-alt: #0f172a;
+  --bg-surface: rgba(17, 24, 39, 0.75);
+  --bg-surface-solid: #111827;
+  --bg-surface-card: rgba(30, 41, 59, 0.65);
+  --bg-surface-hover: rgba(51, 65, 85, 0.7);
+  --bg-glass: rgba(15, 23, 42, 0.75);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-glow: rgba(96, 165, 250, 0.35);
 
   --text-main: #94a3b8;
   --text-muted: #64748b;
-  --text-alternative: #ffffff;
-  --text-dark: #0f172a;
+  --text-light: #cbd5e1;
+  --text-alternative: #f8fafc;
+  --text-white: #ffffff;
 
   /* ========================================== */
   /* BORDES Y RADIOS */
   /* ========================================== */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
   --radius-full: 9999px;
 
   /* ========================================== */
-  /* ELEVACIONES / SOMBRAS */
+  /* SOMBRAS Y EFECTOS */
   /* ========================================== */
-  /* Elevación baja: Ideal para elementos interactivos en estado normal (tarjetas, botones) */
-  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.1);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 8px 24px -4px rgba(0, 0, 0, 0.35);
+  --shadow-lg: 0 20px 40px -8px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px rgba(59, 130, 246, 0.2);
+  --shadow-glow-purple: 0 0 25px rgba(139, 92, 246, 0.2);
 
-  /* Elevación media: Para hovers de tarjetas o componentes flotantes (dropdowns) */
-  --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
-
-  /* Elevación alta: Para modales o elementos que requieran máxima atención */
-  --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
   /* ========================================== */
-  --transition-fast: all 0.2s ease-in-out;
+  /* TRANSICIONES */
+  /* ========================================== */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
   --max-width-site: 1200px;
+  --header-height: 72px;
 
-  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 24px);
 }
 
 html, body, #root {
@@ -111,4 +125,77 @@ body {
   background-color: var(--bg-main);
   color: var(--text-main);
   overflow-x: hidden;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(59, 130, 246, 0.08) 0px, transparent 40%),
+    radial-gradient(at 90% 10%, rgba(139, 92, 246, 0.08) 0px, transparent 40%),
+    radial-gradient(at 50% 85%, rgba(16, 185, 129, 0.05) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tertiary-light);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+/* Accessibility Focus Outline */
+:focus-visible {
+  outline: 2px solid var(--color-primary-light);
+  outline-offset: 3px;
+}
+
+/* Card Metallic / Glass Light Sweep on Hover */
+.tech-card, 
+.project-card, 
+.timeline-item__card, 
+.about-profile-card, 
+.about-bio-card, 
+.contact-card,
+.pillar-card {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+      90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.05), 
+      transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.75s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &:hover::before {
+    left: 180%;
+  }
 }

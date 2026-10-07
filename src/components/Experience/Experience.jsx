@@ -1,60 +1,80 @@
 import ExperienceItem from "./ExperienceItem/ExperienceItem";
 import "./Experience.scss";
+import { FaBriefcase } from "react-icons/fa";
 
 function Experience() {
-    const jobsData = [
-        {
-            id: 1,
-            role: "Freelance Contributions",
-            company: "Freelance",
-            period: "November 2021 - June 2022",
-            description: "* Designing responsive pages for different projects \n * Testing & Supporting pages before and after deployment \n * Producing web pages for private enterprises, promoting the customer's aviable products"
-        },
-        {
-            id: 2,
-            role: "QA Automation Tester - Support",
-            company: "Lion Intel",
-            period: "August 2022 - December 2022",
-            description: "* Provide support for e-Commerce applications in production. \n * Training automation with selenium in python, unit testing, acceptation testing and functionality testing for several projects simultaneously"
-        },
-        {
-            id: 3,
-            role: "FullStack Web Developer",
-            company: "Grupo SINCO",
-            period: "December 2022 - May 2026",
-            description: "* Sole developer for enterprise applications, managing the full lifecycle from product requirements to deployment. \n * Designed and built scalable solutions using .NET Entity Framework Core, Blazor, Angular and Node.js. \n * Conducted API and client unit testing to ensure high-quality production deployments. \n * Provided production support and resolved critical bugs under tight deadlines.\n * Collaborated with cross-functional teams on system design and software architecture."
-        },
-        {
-            id: 4,
-            role: "Middle Fullstack Developer",
-            company: "Corporativo RAINDE S.A. de C.V.",
-            period: "July 2026 - Present",
-            description: "* Designing responsive pages & Developing solutions for different ERP projects \n * Testing & Supporting the client requirements \n * Producing web pages for private enterprises, promoting the customer's aviable products"
-        }
-    ];
+  const jobsData = [
+    {
+      id: 4,
+      role: "Middle Fullstack Developer",
+      company: "Corporativo RAINDE S.A. de C.V.",
+      period: "Julio 2026 - Presente",
+      isCurrent: true,
+      type: "Tiempo Completo",
+      technologies: ["React", ".NET Core", "SQL Server", "REST APIs", "ERP Solutions"],
+      description: "* Desarrollo y modernización de interfaces responsivas y modulares para sistemas ERP empresariales. \n * Análisis, pruebas y soporte continuo alineado a requerimientos críticos de negocio. \n * Producción y despliegue de soluciones web escalables para empresas privadas con alta disponibilidad."
+    },
+    {
+      id: 3,
+      role: "FullStack Web Developer",
+      company: "Grupo SINCO",
+      period: "Diciembre 2022 - Mayo 2026",
+      isCurrent: false,
+      type: "Tiempo Completo",
+      technologies: [".NET Core", "C#", "Blazor", "Angular", "Node.js", "SQL Server", "xUnit", "nUnit"],
+      description: "* Desarrollador responsable de aplicaciones empresariales, liderando el ciclo completo desde arquitectura hasta producción. \n * Diseño e implementación de soluciones escalables con .NET Entity Framework Core, Blazor, Angular y Node.js. \n * Creación de suites de pruebas unitarias y de integración para APIs y frontend con nUnit y xUnit. \n * Soporte en producción, optimización de consultas SQL y resolución de incidencias críticas bajo tiempos estrictos. \n * Arquitectura modular y diseño de sistemas orientado a microservicios y APIs RESTful."
+    },
+    {
+      id: 2,
+      role: "QA Automation Tester - Support",
+      company: "Lion Intel",
+      period: "Agosto 2022 - Diciembre 2022",
+      isCurrent: false,
+      type: "QA & Soporte",
+      technologies: ["Python", "Selenium", "Automated Testing", "e-Commerce", "CI/CD"],
+      description: "* Soporte y diagnóstico preventivo para plataformas e-Commerce de alto volumen en producción. \n * Automatización de pruebas de regresión, integración y aceptación funcional con Selenium en Python."
+    },
+    {
+      id: 1,
+      role: "Freelance Web Developer",
+      company: "Freelance",
+      period: "Noviembre 2021 - Junio 2022",
+      isCurrent: false,
+      type: "Freelance",
+      technologies: ["JavaScript", "HTML5/CSS3", "Sass", "UI/UX", "Responsive Design"],
+      description: "* Diseño e implementación de interfaces web ultra responsivas para clientes comerciales y PyMEs. \n * Pruebas funcionales de rendimiento y soporte antes y después de cada despliegue. \n * Creación de experiencias de usuario atractivas orientadas a conversión y usabilidad."
+    }
+  ];
 
-    jobsData.sort((a, b) => {
-        const dateA = new Date(a.period.split(" - ")[0]);
-        const dateB = new Date(b.period.split(" - ")[0]);
-        return dateB - dateA;
-    });
+  return (
+    <section id="experience" className="experience">
+      <div className="section-header">
+        <span className="section-header__badge">
+          <FaBriefcase className="badge-icon" />
+          Trayectoria
+        </span>
+        <h2 className="section-header__title">Experiencia Laboral</h2>
+        <p className="section-header__subtitle">
+          Historial probado en desarrollo de software empresarial, calidad de código y entrega de valor.
+        </p>
+      </div>
 
-    return (
-        <section className="experience">
-            <h2 className="experience__title">Experience</h2>
-            <div className="experience__timeline">
-                {jobsData.map((job) => (
-                    <ExperienceItem
-                        key={job.id}
-                        role={job.role}
-                        company={job.company}
-                        period={job.period}
-                        description={job.description}
-                    />
-                ))}
-            </div>
-        </section>
-    );
+      <div className="experience__timeline">
+        {jobsData.map((job) => (
+          <ExperienceItem
+            key={job.id}
+            role={job.role}
+            company={job.company}
+            period={job.period}
+            isCurrent={job.isCurrent}
+            type={job.type}
+            technologies={job.technologies}
+            description={job.description}
+          />
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Experience;
