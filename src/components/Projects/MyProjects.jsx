@@ -133,17 +133,17 @@ function MyProjects() {
             <button
               key={tab.id}
               onClick={() => setSelectedFilter(tab.id)}
-              className={`filter-pill ${selectedFilter === tab.id ? 'filter-pill--active' : ''}`}
+              className={`filter-btn ${selectedFilter === tab.id ? 'filter-btn--active' : ''}`}
             >
               <span>{tab.label}</span>
-              <span className="filter-pill__count">{tab.count}</span>
+              <span className="filter-count">{tab.count}</span>
             </button>
           ))}
         </div>
       </div>
 
-      {/* Projects Grid */}
-      <div className="projects-grid">
+      {/* Projects Grid (Original multi-column responsive layout) */}
+      <div className="my-projects__grid">
         {filteredProjects.map(project => (
           <Project
             key={project.id}
