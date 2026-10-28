@@ -11,8 +11,8 @@ function Experience() {
       period: "Julio 2026 - Presente",
       isCurrent: true,
       type: "Tiempo Completo",
-      technologies: ["React", ".NET Core", "SQL Server", "REST APIs", "ERP Solutions"],
-      description: "* Desarrollo y modernización de interfaces responsivas y modulares para sistemas ERP empresariales. \n * Análisis, pruebas y soporte continuo alineado a requerimientos críticos de negocio. \n * Producción y despliegue de soluciones web escalables para empresas privadas con alta disponibilidad."
+      technologies: ["React", ".NET Core", "Node.js", "AI-Augmented Dev", "AI Agents", "SQL Server", "REST APIs"],
+      description: "* Arquitectura y modernización de plataformas empresariales utilizando .NET Core, React y Node.js. \n * Integración de flujos de trabajo con IA y agentes autónomos para acelerar la entrega de software, pruebas y análisis de código. \n * Producción y despliegue de soluciones web escalables con alta disponibilidad y rendimiento optimizado."
     },
     {
       id: 3,
@@ -21,8 +21,8 @@ function Experience() {
       period: "Diciembre 2022 - Mayo 2026",
       isCurrent: false,
       type: "Tiempo Completo",
-      technologies: [".NET Core", "C#", "Blazor", "Angular", "Node.js", "SQL Server", "xUnit", "nUnit"],
-      description: "* Desarrollador responsable de aplicaciones empresariales, liderando el ciclo completo desde arquitectura hasta producción. \n * Diseño e implementación de soluciones escalables con .NET Entity Framework Core, Blazor, Angular y Node.js. \n * Creación de suites de pruebas unitarias y de integración para APIs y frontend con nUnit y xUnit. \n * Soporte en producción, optimización de consultas SQL y resolución de incidencias críticas bajo tiempos estrictos. \n * Arquitectura modular y diseño de sistemas orientado a microservicios y APIs RESTful."
+      technologies: [".NET Core", "C#", "Blazor", "Angular", "Node.js", "SQL Server", "AI Tooling", "xUnit"],
+      description: "* Desarrollador responsable de aplicaciones empresariales, liderando el ciclo completo desde arquitectura hasta producción. \n * Diseño e implementación de soluciones escalables con .NET Entity Framework Core, Blazor, Angular y Node.js. \n * Adopción pionera de herramientas de IA (LLMs) y pipelines de desarrollo para análisis de commits, refactorización y resolución ágil de bugs. \n * Creación de suites de pruebas unitarias y de integración para APIs y frontend con nUnit y xUnit. \n * Soporte en producción, optimización de consultas SQL y resolución de incidencias críticas bajo tiempos estrictos."
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ function Experience() {
     },
     {
       id: 1,
-      role: "Freelance Web Developer",
+      role: "Frontend Developer (Freelance)",
       company: "Freelance",
       period: "Noviembre 2021 - Junio 2022",
       isCurrent: false,
@@ -55,7 +55,7 @@ function Experience() {
         </span>
         <h2 className="section-header__title">Experiencia Laboral</h2>
         <p className="section-header__subtitle">
-          Historial probado en desarrollo de software empresarial, calidad de código y entrega de valor.
+          Historial comprobado en desarrollo de software empresarial, ingeniería asistida por IA y entrega de valor.
         </p>
       </div>
 

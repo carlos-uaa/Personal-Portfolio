@@ -4,8 +4,9 @@ import {
   SiSupabase, SiVercel
 } from 'react-icons/si';
 import { TbBrandCSharp, TbSql } from 'react-icons/tb';
-import { FaAws, FaLayerGroup } from "react-icons/fa";
+import { FaAws, FaLayerGroup, FaRobot, FaBrain } from "react-icons/fa";
 import { VscAzure, VscVscode } from "react-icons/vsc";
+import { HiSparkles } from "react-icons/hi";
 import './TechStack.scss';
 
 function TechStack() {
@@ -37,6 +38,17 @@ function TechStack() {
       ]
     },
     {
+      category: "IA & Desarrollo Agéntico",
+      badgeClass: "badge-focus",
+      technologies: [
+        { name: "Agentes & Workflows", icon: <FaRobot />, color: "#38bdf8" },
+        { name: "Gemini / Claude / GPT", icon: <HiSparkles />, color: "#a855f7" },
+        { name: "OpenAI API", icon: <SiOpenai />, color: "#10a37f" },
+        { name: "Copilot & Qodo", icon: <FaBrain />, color: "#f59e0b" },
+        { name: "Clean Architecture", icon: <FaLayerGroup />, color: "#34d399" },
+      ]
+    },
+    {
       category: "DevOps, Cloud & Herramientas",
       badgeClass: "badge-tools",
       technologies: [
@@ -50,15 +62,6 @@ function TechStack() {
         { name: "VS Code", icon: <VscVscode />, color: "#60a5fa" },
         { name: "npm", icon: <SiNpm />, color: "#ef4444" },
       ]
-    },
-    {
-      category: "Enfoque & Expansión Continua",
-      badgeClass: "badge-focus",
-      technologies: [
-        { name: "Clean Architecture", icon: <FaLayerGroup />, color: "#34d399" },
-        { name: "OpenAI API", icon: <SiOpenai />, color: "#a78bfa" },
-        { name: "Astro", icon: <SiAstro />, color: "#fb923c" },
-      ]
     }
   ];
 
@@ -71,7 +74,7 @@ function TechStack() {
         </span>
         <h2 className="section-header__title">Stack Tecnológico</h2>
         <p className="section-header__subtitle">
-          Herramientas, lenguajes y frameworks que domino y aplico para crear soluciones de nivel empresarial.
+          Herramientas, lenguajes, frameworks e Inteligencia Artificial que aplico para crear soluciones empresariales de alto impacto.
         </p>
       </div>
 

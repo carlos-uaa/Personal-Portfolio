@@ -1,16 +1,16 @@
 import photo from '../../assets/Profile.jpg';
 import { 
   FaUserGraduate, FaMapMarkerAlt, FaFileDownload, FaBuilding, 
-  FaCheck, FaShieldAlt, FaRocket, FaDatabase, FaLayerGroup 
+  FaCheck, FaShieldAlt, FaRocket, FaDatabase, FaLayerGroup, FaRobot
 } from 'react-icons/fa';
 import './AboutMe.scss';
 
 function AboutMe() {
   const handleDownloadCV = () => {
-    const pdfUrl = "/Gomez_Hernandez_Carlos_Antonio_CV.pdf";
+    const pdfUrl = "/Carlos_Gomez_FullStack_Resume.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "GomezHernandezCarlosAntonioCV.pdf";
+    link.download = "Carlos_Gomez_FullStack_Resume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -23,6 +23,11 @@ function AboutMe() {
       description: "Diseño de microservicios y REST APIs en .NET Core con arquitectura limpia, inyección de dependencias y patrones de diseño desacoplados."
     },
     {
+      icon: <FaRobot />,
+      title: "Ingeniería Asistida por IA",
+      description: "Aceleración del ciclo de vida del software mediante agentes autónomos, modelos de lenguaje (LLMs) y pipelines automatizados de desarrollo."
+    },
+    {
       icon: <FaDatabase />,
       title: "Optimización de Bases de Datos",
       description: "Modelado relacional en SQL Server, diseño de esquemas normalizados, optimización de consultas y transacciones críticas de alta concurrencia."
@@ -30,12 +35,7 @@ function AboutMe() {
     {
       icon: <FaShieldAlt />,
       title: "Testing & Calidad Continua",
-      description: "Cobertura rigurosa con suites de pruebas unitarias y funcionales (xUnit, nUnit, Selenium) que aseguran despliegues estables en producción."
-    },
-    {
-      icon: <FaRocket />,
-      title: "Full-Cycle Delivery",
-      description: "Liderazgo técnico de proyectos de punta a punta: desde el análisis de negocio industrial hasta su contenedorización y puesta en marcha."
+      description: "Cobertura rigurosa con suites de pruebas unitarias y funcionales (xUnit, Selenium) que aseguran despliegues estables en producción."
     }
   ];
 
@@ -98,9 +98,10 @@ function AboutMe() {
             </p>
             <p className="bio-text">
               Mi dominio abarca el ecosistema tecnológico de Microsoft (<strong>C#, .NET Core, Blazor, SQL Server</strong>)
-              junto con entornos modernos de JavaScript/TypeScript (<strong>React, Angular, Node.js</strong>). Me especializo
-              en transformar reglas de negocio e industriales complejas en interfaces reactivas y APIs de alta disponibilidad.
-              Apasionado por las mejores prácticas, Clean Code, automatización con Docker y arquitecturas preparadas para crecer en la nube.
+              junto con entornos modernos de JavaScript/TypeScript (<strong>React, Angular, Node.js</strong>) y el{' '}
+              <strong>Desarrollo Asistido por Inteligencia Artificial y Agentes Autónomos</strong>. Me especializo
+              en transformar reglas de negocio complejas en interfaces reactivas y APIs de alta disponibilidad,
+              aplicando Clean Code, pruebas automatizadas y contenedores Docker para la nube.
             </p>
           </div>
 

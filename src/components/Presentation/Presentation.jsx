@@ -9,10 +9,11 @@ import './Presentation.scss';
 import ContactChip from './ContactChip/ContactChip';
 
 const TITLES = [
-  "Middle Fullstack Developer",
+  "Fullstack Developer (.NET & React)",
   ".NET Core & C# Specialist",
-  "React & Frontend Architect",
-  "Enterprise ERP & Cloud Solutions"
+  "React & Node.js Engineer",
+  "AI-Augmented Software Engineer",
+  "Enterprise & Cloud Solutions"
 ];
 
 function Presentation() {
@@ -70,8 +71,8 @@ function Presentation() {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Gomez_Hernandez_Carlos_Antonio_CV.pdf';
-    link.download = 'GomezHernandezCarlosAntonioCV.pdf';
+    link.href = '/Carlos_Gomez_FullStack_Resume.pdf';
+    link.download = 'Carlos_Gomez_FullStack_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -105,8 +106,9 @@ function Presentation() {
             <p>
               Arquitecto y desarrollo ecosistemas digitales robustos desde cero. Especialista en{' '}
               <span className="highlight">Ingeniería Fullstack</span> con{' '}
-              <span className="highlight">.NET Core, C#, React, Blazor y SQL</span>. Convierto requerimientos
-              complejos de <span className="highlight--alt">entornos industriales y empresariales</span> en{' '}
+              <span className="highlight">.NET Core, C#, React, Blazor y Node.js</span>, complementado con{' '}
+              <span className="highlight--alt">Desarrollo Asistido por IA & Agentes Autónomos</span> para acelerar
+              entregas y convertir requerimientos de <span className="highlight--alt">entornos empresariales</span> en{' '}
               <span className="highlight">sistemas escalables, seguros y listos para producción</span>.
             </p>
           </div>
@@ -143,7 +145,7 @@ function Presentation() {
         <div className="presentation__img-wrapper">
           <div className="presentation__img-glow"></div>
           <div className="presentation__img-card">
-            <img src={photo} alt="Carlos Gómez - Middle Fullstack Developer" />
+            <img src={photo} alt="Carlos Gómez - Fullstack Developer" />
             <div className="floating-badge floating-badge--experience">
               <span className="floating-badge__icon"><HiSparkles /></span>
               <div className="floating-badge__info">
@@ -154,7 +156,7 @@ function Presentation() {
             <div className="floating-badge floating-badge--tech">
               <span className="tech-tag">.NET Core</span>
               <span className="tech-tag">React</span>
-              <span className="tech-tag">SQL</span>
+              <span className="tech-tag">AI-Augmented</span>
             </div>
           </div>
         </div>
@@ -175,8 +177,8 @@ function Presentation() {
           <span className="metric-label">Full-Lifecycle (Diseño a Despliegue)</span>
         </div>
         <div className="metric-card">
-          <span className="metric-number">ERP / QA</span>
-          <span className="metric-label">Enfoque Industrial & Calidad</span>
+          <span className="metric-number">AI & QA</span>
+          <span className="metric-label">Productividad & Código Limpio</span>
         </div>
       </div>
     </section>
