@@ -5,7 +5,7 @@ import { FaBriefcase } from "react-icons/fa";
 function Experience() {
   const jobsData = [
     {
-      id: 4,
+      id: 5,
       role: "Middle Fullstack Developer",
       company: "Corporativo RAINDE S.A. de C.V.",
       period: "Julio 2026 - Presente",
@@ -13,6 +13,16 @@ function Experience() {
       type: "Tiempo Completo",
       technologies: ["React", ".NET Core", "Node.js", "AI-Augmented Dev", "AI Agents", "SQL Server", "REST APIs"],
       description: "* Arquitectura y modernización de plataformas empresariales utilizando .NET Core, React y Node.js. \n * Integración de flujos de trabajo con IA y agentes autónomos para acelerar la entrega de software, pruebas y análisis de código. \n * Producción y despliegue de soluciones web escalables con alta disponibilidad y rendimiento optimizado."
+    },
+    {
+      id: 4,
+      role: "Software Engineer & Consultor Técnico",
+      company: "Teseract (teseract.io)",
+      period: "2024 - Presente",
+      isCurrent: true,
+      type: "Asociado / Proyectos",
+      technologies: ["React", "Node.js", ".NET Core", "Cloud & Web Apps", "AI Integration", "Point of Sale (POS)"],
+      description: "* Participación activa en el diseño técnico, arquitectura y desarrollo de plataformas web a la medida y sistemas comerciales para clientes y empresas. \n * Liderazgo en el ciclo completo de entrega de software de punta a punta, con capacidad para resolver proyectos tanto de forma autónoma como coordinando con equipos de desarrollo. \n * Implementación de soluciones escalables, integración de APIs y automatización orientada a resultados de negocio."
     },
     {
       id: 3,
@@ -55,7 +65,7 @@ function Experience() {
         </span>
         <h2 className="section-header__title">Experiencia Laboral</h2>
         <p className="section-header__subtitle">
-          Historial comprobado en desarrollo de software empresarial, ingeniería asistida por IA y entrega de valor.
+          Historial comprobado en desarrollo de software empresarial, proyectos a la medida e ingeniería de alto rendimiento.
         </p>
       </div>
 

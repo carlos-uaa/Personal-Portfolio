@@ -1,7 +1,7 @@
 /* Data import */
 import { useState, useEffect } from 'react';
 import photo from '../../assets/Profile.jpg';
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaArrowRight, FaDownload } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaArrowRight, FaDownload, FaGlobe } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import './Presentation.scss';
 
@@ -12,6 +12,7 @@ const TITLES = [
   "Fullstack Developer (.NET & React)",
   ".NET Core & C# Specialist",
   "React & Node.js Engineer",
+  "Associate Engineer @ Teseract.io",
   "AI-Augmented Software Engineer",
   "Enterprise & Cloud Solutions"
 ];
@@ -56,6 +57,12 @@ function Presentation() {
       label: 'GitHub'
     },
     {
+      id: 'teseract',
+      href: 'https://teseract.io/',
+      icon: FaGlobe,
+      label: 'Teseract.io'
+    },
+    {
       id: 'email',
       href: 'mailto:ing.gomez.hernandez.carlos@gmail.com',
       icon: FaEnvelope,
@@ -88,7 +95,7 @@ function Presentation() {
               <span className="status-dot__ping"></span>
               <span className="status-dot__core"></span>
             </span>
-            <span>Disponible para nuevos desafíos & roles Full-time</span>
+            <span>Disponible para roles Full-time & Consultoría Técnica</span>
           </div>
 
           <div className="me">
@@ -106,8 +113,9 @@ function Presentation() {
             <p>
               Arquitecto y desarrollo ecosistemas digitales robustos desde cero. Especialista en{' '}
               <span className="highlight">Ingeniería Fullstack</span> con{' '}
-              <span className="highlight">.NET Core, C#, React, Blazor y Node.js</span>, complementado con{' '}
-              <span className="highlight--alt">Desarrollo Asistido por IA & Agentes Autónomos</span> para acelerar
+              <span className="highlight">.NET Core, C#, React, Blazor y Node.js</span>, colaborando también en proyectos a la medida con{' '}
+              <a href="https://teseract.io/" target="_blank" rel="noopener noreferrer" className="highlight--alt">Teseract.io</a>. 
+              Integro <span className="highlight">IA & Agentes Autónomos</span> para acelerar
               entregas y convertir requerimientos de <span className="highlight--alt">entornos empresariales</span> en{' '}
               <span className="highlight">sistemas escalables, seguros y listos para producción</span>.
             </p>
