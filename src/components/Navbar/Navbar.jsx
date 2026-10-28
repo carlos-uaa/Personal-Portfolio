@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { FaBars, FaTimes, FaFileDownload, FaCode } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './Navbar.scss';
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const { lang, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,12 +34,12 @@ function Navbar() {
   }, []);
 
   const navLinks = [
-    { href: '#hero', label: 'Inicio', id: 'hero' },
-    { href: '#experience', label: 'Experiencia', id: 'experience' },
-    { href: '#projects', label: 'Proyectos', id: 'projects' },
-    { href: '#about', label: 'Sobre Mí', id: 'about' },
-    { href: '#technologies', label: 'Stack', id: 'technologies' },
-    { href: '#contact', label: 'Contacto', id: 'contact' },
+    { href: '#hero', label: t.nav.home, id: 'hero' },
+    { href: '#experience', label: t.nav.experience, id: 'experience' },
+    { href: '#projects', label: t.nav.projects, id: 'projects' },
+    { href: '#about', label: t.nav.about, id: 'about' },
+    { href: '#technologies', label: t.nav.stack, id: 'technologies' },
+    { href: '#contact', label: t.nav.contact, id: 'contact' },
   ];
 
   const handleNavClick = () => {
@@ -46,8 +48,8 @@ function Navbar() {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Gomez_Hernandez_Carlos_Antonio_CV.pdf';
-    link.download = 'GomezHernandezCarlosAntonioCV.pdf';
+    link.href = '/Carlos_Gomez_FullStack_Resume.pdf';
+    link.download = 'Carlos_Gomez_FullStack_Resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -81,14 +83,29 @@ function Navbar() {
             ))}
           </ul>
 
-          <button
-            onClick={handleDownloadCV}
-            className="navbar__cv-btn"
-            aria-label="Download Curriculum Vitae"
-          >
-            <FaFileDownload className="navbar__cv-icon" />
-            <span>CV</span>
-          </button>
+          <div className="navbar__actions">
+            {/* Language Switcher Pill */}
+            <button
+              onClick={toggleLanguage}
+              className="navbar__lang-btn"
+              title={lang === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+              aria-label={t.nav.switchLangAria}
+            >
+              <span className="navbar__lang-flag">{lang === 'en' ? '🇺🇸' : '🇲🇽'}</span>
+              <span className="navbar__lang-text">{lang === 'en' ? 'EN' : 'ES'}</span>
+              <span className="navbar__lang-switch-arrow">⇄</span>
+              <span className="navbar__lang-target">{lang === 'en' ? 'ES' : 'EN'}</span>
+            </button>
+
+            <button
+              onClick={handleDownloadCV}
+              className="navbar__cv-btn"
+              aria-label={t.nav.downloadCv}
+            >
+              <FaFileDownload className="navbar__cv-icon" />
+              <span>{t.nav.cvShort}</span>
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Menu Toggle Button */}
@@ -117,9 +134,17 @@ function Navbar() {
             </li>
           ))}
           <li className="navbar__mobile-actions">
+            <button
+              onClick={toggleLanguage}
+              className="navbar__mobile-lang-btn"
+              aria-label={t.nav.switchLangAria}
+            >
+              <span>{lang === 'en' ? '🇺🇸 English' : '🇲🇽 Español'}</span>
+              <span className="navbar__mobile-lang-switch">⇄ {lang === 'en' ? 'Español' : 'English'}</span>
+            </button>
             <button onClick={handleDownloadCV} className="navbar__mobile-cv-btn">
               <FaFileDownload />
-              <span>Descargar CV</span>
+              <span>{t.nav.downloadCv}</span>
             </button>
           </li>
         </ul>

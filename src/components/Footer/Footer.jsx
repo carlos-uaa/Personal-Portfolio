@@ -1,7 +1,10 @@
 import { FaArrowUp, FaCode } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './Footer.scss';
 
 function Footer() {
+  const { t } = useLanguage();
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -18,17 +21,17 @@ function Footer() {
             <span className="footer__brand-text">Ing. Carlos Gómez</span>
           </div>
           <p className="footer__tagline">
-            Middle Fullstack Developer • Construyendo soluciones empresariales de alto valor.
+            {t.footer.tagline}
           </p>
         </div>
 
         <div className="footer__actions">
           <p className="footer__copyright">
-            © {new Date().getFullYear()} Carlos Antonio Gómez Hernández.
+            © {new Date().getFullYear()} {t.footer.copyright}
           </p>
 
-          <button onClick={scrollToTop} className="footer__top-btn" aria-label="Volver arriba">
-            <span>Inicio</span>
+          <button onClick={scrollToTop} className="footer__top-btn" aria-label={t.footer.backToTop}>
+            <span>{t.footer.backToTop}</span>
             <FaArrowUp />
           </button>
         </div>

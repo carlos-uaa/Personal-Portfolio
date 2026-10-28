@@ -1,71 +1,22 @@
 import ExperienceItem from "./ExperienceItem/ExperienceItem";
 import "./Experience.scss";
 import { FaBriefcase } from "react-icons/fa";
+import { useLanguage } from "../../context/LanguageContext";
 
 function Experience() {
-  const jobsData = [
-    {
-      id: 5,
-      role: "Middle Fullstack Developer",
-      company: "Corporativo RAINDE S.A. de C.V.",
-      period: "Julio 2026 - Presente",
-      isCurrent: true,
-      type: "Tiempo Completo",
-      technologies: ["React", ".NET Core", "Node.js", "AI-Augmented Dev", "AI Agents", "SQL Server", "REST APIs"],
-      description: "* Arquitectura y modernización de plataformas empresariales utilizando .NET Core, React y Node.js. \n * Integración de flujos de trabajo con IA y agentes autónomos para acelerar la entrega de software, pruebas y análisis de código. \n * Producción y despliegue de soluciones web escalables con alta disponibilidad y rendimiento optimizado."
-    },
-    {
-      id: 4,
-      role: "Software Engineer & Consultor Técnico",
-      company: "Teseract (teseract.io)",
-      period: "2024 - Presente",
-      isCurrent: true,
-      type: "Asociado / Proyectos",
-      technologies: ["React", "Node.js", ".NET Core", "Cloud & Web Apps", "AI Integration", "Point of Sale (POS)"],
-      description: "* Participación activa en el diseño técnico, arquitectura y desarrollo de plataformas web a la medida y sistemas comerciales para clientes y empresas. \n * Liderazgo en el ciclo completo de entrega de software de punta a punta, con capacidad para resolver proyectos tanto de forma autónoma como coordinando con equipos de desarrollo. \n * Implementación de soluciones escalables, integración de APIs y automatización orientada a resultados de negocio."
-    },
-    {
-      id: 3,
-      role: "FullStack Web Developer",
-      company: "Grupo SINCO",
-      period: "Diciembre 2022 - Mayo 2026",
-      isCurrent: false,
-      type: "Tiempo Completo",
-      technologies: [".NET Core", "C#", "Blazor", "Angular", "Node.js", "SQL Server", "AI Tooling", "xUnit"],
-      description: "* Desarrollador responsable de aplicaciones empresariales, liderando el ciclo completo desde arquitectura hasta producción. \n * Diseño e implementación de soluciones escalables con .NET Entity Framework Core, Blazor, Angular y Node.js. \n * Adopción pionera de herramientas de IA (LLMs) y pipelines de desarrollo para análisis de commits, refactorización y resolución ágil de bugs. \n * Creación de suites de pruebas unitarias y de integración para APIs y frontend con nUnit y xUnit. \n * Soporte en producción, optimización de consultas SQL y resolución de incidencias críticas bajo tiempos estrictos."
-    },
-    {
-      id: 2,
-      role: "QA Automation Tester - Support",
-      company: "Lion Intel",
-      period: "Agosto 2022 - Diciembre 2022",
-      isCurrent: false,
-      type: "QA & Soporte",
-      technologies: ["Python", "Selenium", "Automated Testing", "e-Commerce", "CI/CD"],
-      description: "* Soporte y diagnóstico preventivo para plataformas e-Commerce de alto volumen en producción. \n * Automatización de pruebas de regresión, integración y aceptación funcional con Selenium en Python."
-    },
-    {
-      id: 1,
-      role: "Frontend Developer (Freelance)",
-      company: "Freelance",
-      period: "Noviembre 2021 - Junio 2022",
-      isCurrent: false,
-      type: "Freelance",
-      technologies: ["JavaScript", "HTML5/CSS3", "Sass", "UI/UX", "Responsive Design"],
-      description: "* Diseño e implementación de interfaces web ultra responsivas para clientes comerciales y PyMEs. \n * Pruebas funcionales de rendimiento y soporte antes y después de cada despliegue. \n * Creación de experiencias de usuario atractivas orientadas a conversión y usabilidad."
-    }
-  ];
+  const { t } = useLanguage();
+  const jobsData = t.experience.jobs;
 
   return (
     <section id="experience" className="experience">
       <div className="section-header">
         <span className="section-header__badge">
           <FaBriefcase className="badge-icon" />
-          Trayectoria
+          {t.experience.badge}
         </span>
-        <h2 className="section-header__title">Experiencia Laboral</h2>
+        <h2 className="section-header__title">{t.experience.title}</h2>
         <p className="section-header__subtitle">
-          Historial comprobado en desarrollo de software empresarial, proyectos a la medida e ingeniería de alto rendimiento.
+          {t.experience.subtitle}
         </p>
       </div>
 

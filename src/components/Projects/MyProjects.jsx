@@ -8,18 +8,22 @@ import { servonImages } from '../../assets/Servon/ServonImages';
 import { stepAppImages } from '../../assets/SetpApp/StepAppImages';
 import { prizePopImages } from '../../assets/PrizePop/PrizePopImages';
 import { FaLaptopCode } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 
 function MyProjects() {
   const [selectedFilter, setSelectedFilter] = useState('all');
+  const { t } = useLanguage();
+
+  const pItems = t.projects.items;
 
   const projectsData = [
     {
       id: 1,
-      title: 'Áurea Digital',
+      title: pItems.aurea.title,
       categoryType: 'saas',
-      category: 'SaaS & Eventos Digitales',
-      highlight: '🚀 En Vivo en Vercel',
-      description: 'Plataforma web moderna y elegante para la creación, personalización y distribución de invitaciones digitales interactivas para eventos sociales y corporativos de alta gama. Cuenta con panel de administración general, panel para clientes, gestión de pases y confirmación de asistencia (RSVP) en tiempo real, catálogo de plantillas dinámicas, planes de precios y experiencia optimizada para dispositivos móviles.',
+      category: pItems.aurea.category,
+      highlight: pItems.aurea.highlight,
+      description: pItems.aurea.description,
       images: aureaDigitalImages,
       technologies: ['react', 'supabase', 'vercel', 'javascript', 'sass'],
       liveUrl: 'https://aureadigital.vercel.app/',
@@ -27,82 +31,82 @@ function MyProjects() {
     },
     {
       id: 2,
-      title: 'QualiTrack',
+      title: pItems.qualitrack.title,
       categoryType: 'enterprise',
-      category: 'Calidad & Manufactura',
-      highlight: 'Workflow State Machine',
-      description: 'Plataforma empresarial de grado de producción diseñada para automatizar el control de calidad en manufactura y cadena de suministro. Centraliza el ciclo completo de reporte de piezas defectuosas (NG - Not Good) mediante la digitalización estricta del Inspection Report. Incluye un motor de estados lineales deterministas que guía secuencialmente desde alertas automáticas a proveedores hasta la disposición final del material (scrap, retorno o reclamaciones).',
+      category: pItems.qualitrack.category,
+      highlight: pItems.qualitrack.highlight,
+      description: pItems.qualitrack.description,
       images: qualiTrackImages,
       technologies: ['csharp', 'blazor', 'sql', 'nunit', 'xunit', 'javascript'],
       github: [
-        { url: 'https://github.com/carlos-uaa/QualiTrack.Client', name: 'Client Repo' },
-        { url: 'https://github.com/carlos-uaa/QualiTrack.API', name: 'API (.NET Core)' }
+        { url: 'https://github.com/carlos-uaa/QualiTrack.Client', name: t.projects.clientRepo },
+        { url: 'https://github.com/carlos-uaa/QualiTrack.API', name: t.projects.apiRepo }
       ]
     },
     {
       id: 3,
-      title: 'Proctix',
+      title: pItems.proctix.title,
       categoryType: 'enterprise',
-      category: 'Administración & Procesos ERP',
-      highlight: 'Auditoría & Cumplimiento',
-      description: 'Robusta aplicación web administrativa concebida para orquestar, estandarizar y auditar procedimientos complejos en líneas de manufactura industrial de alto volumen. Cuenta con control de acceso dinámico por jerarquías, captura de firma digitalizada, notificaciones automatizadas por correo, registro fotográfico in-situ y generación avanzada de reportes en Excel para trazabilidad y auditorías oficiales.',
+      category: pItems.proctix.category,
+      highlight: pItems.proctix.highlight,
+      description: pItems.proctix.description,
       images: proctixImages,
       technologies: ['csharp', 'blazor', 'sql', 'docker', 'xunit', 'nunit', 'javascript'],
       github: [
-        { url: 'https://github.com/carlos-uaa/Proctix.Client', name: 'Client Repo' },
-        { url: 'https://github.com/carlos-uaa/Proctix.API', name: 'API (.NET Core)' }
+        { url: 'https://github.com/carlos-uaa/Proctix.Client', name: t.projects.clientRepo },
+        { url: 'https://github.com/carlos-uaa/Proctix.API', name: t.projects.apiRepo }
       ]
     },
     {
       id: 4,
-      title: 'Servon',
+      title: pItems.servon.title,
       categoryType: 'management',
-      category: 'Gestión de Servicios Públicos',
-      highlight: 'Business Intelligence',
-      description: 'Plataforma web de ingeniería diseñada para centralizar y coordinar el ciclo de vida operativo de servicios públicos (agua, electricidad, telecomunicaciones). Permite la gestión inmediata de órdenes de suspensión, registro y validación de cobros, y reactivación de suministros. Integra tableros analíticos interactivos que transforman datos operativos en métricas de rendimiento en tiempo real.',
+      category: pItems.servon.category,
+      highlight: pItems.servon.highlight,
+      description: pItems.servon.description,
       images: servonImages,
       technologies: ['blazor', 'csharp', 'sql', 'jwt'],
       github: [
-        { url: 'https://github.com/carlos-uaa/Servon.Client', name: 'Client Repo' },
-        { url: 'https://github.com/carlos-uaa/Servon.API', name: 'API (.NET Core)' }
+        { url: 'https://github.com/carlos-uaa/Servon.Client', name: t.projects.clientRepo },
+        { url: 'https://github.com/carlos-uaa/Servon.API', name: t.projects.apiRepo }
       ]
     },
     {
       id: 5,
-      title: 'StepApp',
+      title: pItems.stepapp.title,
       categoryType: 'productivity',
-      category: 'Productividad & Tablero Ágil',
-      highlight: 'React + .NET Core API',
-      description: 'Herramienta moderna de gestión ágil de tareas con experiencia de usuario interactiva y fluida. Diseñada con arquitectura desacoplada: frontend dinámico en React y Sass con soporte para arrastrar y soltar (Drag and Drop), sincronizado con una API RESTful desarrollada con .NET Entity Framework Core y SQL Server.',
+      category: pItems.stepapp.category,
+      highlight: pItems.stepapp.highlight,
+      description: pItems.stepapp.description,
       images: stepAppImages,
       technologies: ['react', 'csharp', 'sass', 'javascript', 'sql'],
       github: [
         { url: 'https://github.com/carlos-uaa/StepApp.Client', name: 'React Client' },
-        { url: 'https://github.com/carlos-uaa/StepApp.Api', name: 'API (.NET Core)' }
+        { url: 'https://github.com/carlos-uaa/StepApp.Api', name: t.projects.apiRepo }
       ]
     },
     {
       id: 6,
-      title: 'PrizePop',
+      title: pItems.prizepop.title,
       categoryType: 'management',
-      category: 'Sorteos & Recaudación',
-      highlight: 'Full-Stack Architecture',
-      description: 'Plataforma web completa para creación, administración y dinamización de rifas y concursos interactivos para causas benéficas y eventos empresariales. Dispone de personalización de temas, cálculo y asignación automatizada de premios, pasarela de venta y control transparente de tickets emitidos.',
+      category: pItems.prizepop.category,
+      highlight: pItems.prizepop.highlight,
+      description: pItems.prizepop.description,
       images: prizePopImages,
       technologies: ['blazor', 'csharp', 'sql'],
       github: [
-        { url: 'https://github.com/carlos-uaa/PrizePop.Client', name: 'Client Repo' },
-        { url: 'https://github.com/carlos-uaa/PrizePop.API', name: 'API (.NET Core)' }
+        { url: 'https://github.com/carlos-uaa/PrizePop.Client', name: t.projects.clientRepo },
+        { url: 'https://github.com/carlos-uaa/PrizePop.API', name: t.projects.apiRepo }
       ]
     }
   ];
 
   const filterTabs = [
-    { id: 'all', label: 'Todos los Proyectos', count: projectsData.length },
-    { id: 'enterprise', label: 'Enterprise & ERP', count: projectsData.filter(p => p.categoryType === 'enterprise').length },
-    { id: 'saas', label: 'SaaS & Apps en Vivo', count: projectsData.filter(p => p.categoryType === 'saas').length },
-    { id: 'management', label: 'Gestión & Servicios', count: projectsData.filter(p => p.categoryType === 'management').length },
-    { id: 'productivity', label: 'Productividad Web', count: projectsData.filter(p => p.categoryType === 'productivity').length },
+    { id: 'all', label: t.projects.filters.all, count: projectsData.length },
+    { id: 'enterprise', label: t.projects.filters.enterprise, count: projectsData.filter(p => p.categoryType === 'enterprise').length },
+    { id: 'saas', label: t.projects.filters.saas, count: projectsData.filter(p => p.categoryType === 'saas').length },
+    { id: 'management', label: t.projects.filters.management, count: projectsData.filter(p => p.categoryType === 'management').length },
+    { id: 'productivity', label: t.projects.filters.productivity, count: projectsData.filter(p => p.categoryType === 'productivity').length },
   ];
 
   const filteredProjects = selectedFilter === 'all'
@@ -114,11 +118,11 @@ function MyProjects() {
       <div className="section-header">
         <span className="section-header__badge">
           <FaLaptopCode className="badge-icon" />
-          Portafolio
+          {t.projects.badge}
         </span>
-        <h2 className="section-header__title">Proyectos Destacados</h2>
+        <h2 className="section-header__title">{t.projects.title}</h2>
         <p className="section-header__subtitle">
-          Sistemas completos con arquitecturas reales, lógica de negocio avanzada y aplicaciones en producción.
+          {t.projects.subtitle}
         </p>
       </div>
 
@@ -129,19 +133,29 @@ function MyProjects() {
             <button
               key={tab.id}
               onClick={() => setSelectedFilter(tab.id)}
-              className={`filter-btn ${selectedFilter === tab.id ? 'filter-btn--active' : ''}`}
+              className={`filter-pill ${selectedFilter === tab.id ? 'filter-pill--active' : ''}`}
             >
               <span>{tab.label}</span>
-              <span className="filter-count">{tab.count}</span>
+              <span className="filter-pill__count">{tab.count}</span>
             </button>
           ))}
         </div>
       </div>
 
       {/* Projects Grid */}
-      <div className="my-projects__grid">
-        {filteredProjects.map((project) => (
-          <Project key={project.id} {...project} />
+      <div className="projects-grid">
+        {filteredProjects.map(project => (
+          <Project
+            key={project.id}
+            title={project.title}
+            category={project.category}
+            highlight={project.highlight}
+            description={project.description}
+            images={project.images}
+            technologies={project.technologies}
+            github={project.github}
+            liveUrl={project.liveUrl}
+          />
         ))}
       </div>
     </section>

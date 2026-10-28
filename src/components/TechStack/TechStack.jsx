@@ -7,12 +7,15 @@ import { TbBrandCSharp, TbSql } from 'react-icons/tb';
 import { FaAws, FaLayerGroup, FaRobot, FaBrain } from "react-icons/fa";
 import { VscAzure, VscVscode } from "react-icons/vsc";
 import { HiSparkles } from "react-icons/hi";
+import { useLanguage } from '../../context/LanguageContext';
 import './TechStack.scss';
 
 function TechStack() {
+  const { t } = useLanguage();
+
   const skillsData = [
     {
-      category: "Backend & Arquitectura",
+      category: t.tech.categories.backend,
       badgeClass: "badge-backend",
       technologies: [
         { name: "C#", icon: <TbBrandCSharp />, color: "#239120" },
@@ -24,7 +27,7 @@ function TechStack() {
       ]
     },
     {
-      category: "Frontend & UI/UX",
+      category: t.tech.categories.frontend,
       badgeClass: "badge-frontend",
       technologies: [
         { name: "React", icon: <SiReact />, color: "#38bdf8" },
@@ -38,7 +41,7 @@ function TechStack() {
       ]
     },
     {
-      category: "IA & Desarrollo Agéntico",
+      category: t.tech.categories.ai,
       badgeClass: "badge-focus",
       technologies: [
         { name: "Agentes & Workflows", icon: <FaRobot />, color: "#38bdf8" },
@@ -49,7 +52,7 @@ function TechStack() {
       ]
     },
     {
-      category: "DevOps, Cloud & Herramientas",
+      category: t.tech.categories.devops,
       badgeClass: "badge-tools",
       technologies: [
         { name: "Docker", icon: <SiDocker />, color: "#38bdf8" },
@@ -70,11 +73,11 @@ function TechStack() {
       <div className="section-header">
         <span className="section-header__badge">
           <FaLayerGroup className="badge-icon" />
-          Habilidades
+          {t.tech.badge}
         </span>
-        <h2 className="section-header__title">Stack Tecnológico</h2>
+        <h2 className="section-header__title">{t.tech.title}</h2>
         <p className="section-header__subtitle">
-          Herramientas, lenguajes, frameworks e Inteligencia Artificial que aplico para crear soluciones empresariales de alto impacto.
+          {t.tech.subtitle}
         </p>
       </div>
 

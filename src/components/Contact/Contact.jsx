@@ -3,9 +3,11 @@ import {
   FaEnvelope, FaPhone, FaLinkedin, FaGithub, 
   FaCopy, FaCheck, FaPaperPlane, FaMapMarkerAlt, FaClock 
 } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './Contact.scss';
 
 function Contact() {
+  const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
   const email = "ing.gomez.hernandez.carlos@gmail.com";
 
@@ -20,11 +22,11 @@ function Contact() {
       <div className="section-header">
         <span className="section-header__badge">
           <FaPaperPlane className="badge-icon" />
-          Contacto Directo
+          {t.contact.badge}
         </span>
-        <h2 className="section-header__title">¿Listo para construir algo extraordinario?</h2>
+        <h2 className="section-header__title">{t.contact.title}</h2>
         <p className="section-header__subtitle">
-          Estoy disponible para posiciones de tiempo completo (remoto o híbrido), consultoría técnica y proyectos estratégicos.
+          {t.contact.subtitle}
         </p>
       </div>
 
@@ -35,7 +37,7 @@ function Contact() {
               <FaEnvelope />
             </div>
             <div className="contact-method__info">
-              <span className="contact-method__label">Correo Electrónico Profesional</span>
+              <span className="contact-method__label">{t.contact.emailLabel}</span>
               <a href={`mailto:${email}`} className="contact-method__value">
                 {email}
               </a>
@@ -43,18 +45,18 @@ function Contact() {
             <button 
               className={`copy-btn ${copied ? 'copy-btn--copied' : ''}`}
               onClick={handleCopyEmail}
-              aria-label="Copiar correo"
-              title="Copiar al portapapeles"
+              aria-label={t.contact.copyBtn}
+              title={t.contact.copyBtn}
             >
               {copied ? (
                 <>
                   <FaCheck />
-                  <span>¡Copiado!</span>
+                  <span>{t.contact.copiedBtn}</span>
                 </>
               ) : (
                 <>
                   <FaCopy />
-                  <span>Copiar</span>
+                  <span>{t.contact.copyBtn}</span>
                 </>
               )}
             </button>
@@ -69,7 +71,7 @@ function Contact() {
             >
               <FaPhone className="btn-icon" />
               <div className="btn-text">
-                <span className="title">WhatsApp Directo</span>
+                <span className="title">{t.contact.whatsappTitle}</span>
                 <span className="subtitle">+52 (449) 348-3339</span>
               </div>
             </a>
@@ -105,15 +107,15 @@ function Contact() {
         <div className="contact-card__footer">
           <div className="status-item">
             <FaMapMarkerAlt className="status-icon" />
-            <span>Aguascalientes, México</span>
+            <span>{t.contact.location}</span>
           </div>
           <div className="status-item">
             <FaClock className="status-icon" />
-            <span>Zona Horaria: GMT-6 (CST)</span>
+            <span>{t.contact.timezone}</span>
           </div>
           <div className="status-item status-item--availability">
             <span className="status-indicator"></span>
-            <span>Respuesta habitual: &lt; 24 horas</span>
+            <span>{t.contact.availability}</span>
           </div>
         </div>
       </div>

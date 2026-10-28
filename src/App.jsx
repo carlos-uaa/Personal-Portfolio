@@ -1,3 +1,4 @@
+import { LanguageProvider } from './context/LanguageContext';
 import BackgroundEffects from './components/Background/BackgroundEffects';
 import Navbar from './components/Navbar/Navbar';
 import Presentation from './components/Presentation/Presentation';
@@ -11,13 +12,13 @@ import FloatingCTA from './components/FloatingCTA/FloatingCTA';
 import RevealOnScroll from './components/common/RevealOnScroll';
 import './App.scss';
 
-function App() {
+function AppContent() {
   return (
     <div className="App">
       {/* Interactive Animated Background Canvas & Floating Aurora Mesh */}
       <BackgroundEffects />
 
-      {/* Sticky Glass Navbar */}
+      {/* Sticky Glass Navbar with Language Switcher */}
       <Navbar />
 
       {/* Main Content Sections with Fluid Scroll-Reveal Transitions */}
@@ -53,6 +54,14 @@ function App() {
       {/* Persistent Floating Quick Contact Action */}
       <FloatingCTA />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 

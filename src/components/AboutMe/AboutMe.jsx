@@ -3,9 +3,12 @@ import {
   FaUserGraduate, FaMapMarkerAlt, FaFileDownload, FaBuilding, 
   FaCheck, FaShieldAlt, FaRocket, FaDatabase, FaLayerGroup, FaRobot
 } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 import './AboutMe.scss';
 
 function AboutMe() {
+  const { t } = useLanguage();
+
   const handleDownloadCV = () => {
     const pdfUrl = "/Carlos_Gomez_FullStack_Resume.pdf";
     const link = document.createElement("a");
@@ -16,39 +19,24 @@ function AboutMe() {
     document.body.removeChild(link);
   };
 
-  const corePillars = [
-    {
-      icon: <FaLayerGroup />,
-      title: "Arquitectura & APIs Escalables",
-      description: "Diseño de microservicios y REST APIs en .NET Core con arquitectura limpia, inyección de dependencias y patrones de diseño desacoplados."
-    },
-    {
-      icon: <FaRobot />,
-      title: "Ingeniería Asistida por IA",
-      description: "Aceleración del ciclo de vida del software mediante agentes autónomos, modelos de lenguaje (LLMs) y pipelines automatizados de desarrollo."
-    },
-    {
-      icon: <FaDatabase />,
-      title: "Optimización de Bases de Datos",
-      description: "Modelado relacional en SQL Server, diseño de esquemas normalizados, optimización de consultas y transacciones críticas de alta concurrencia."
-    },
-    {
-      icon: <FaShieldAlt />,
-      title: "Testing & Calidad Continua",
-      description: "Cobertura rigurosa con suites de pruebas unitarias y funcionales (xUnit, Selenium) que aseguran despliegues estables en producción."
-    }
-  ];
+  const pillarIcons = [<FaLayerGroup />, <FaRobot />, <FaDatabase />, <FaShieldAlt />];
+
+  const corePillars = t.about.pillars.map((pillar, idx) => ({
+    icon: pillarIcons[idx] || <FaRocket />,
+    title: pillar.title,
+    description: pillar.description
+  }));
 
   return (
     <section id="about" className="about-section">
       <div className="section-header">
         <span className="section-header__badge">
           <FaUserGraduate className="badge-icon" />
-          Perfil Profesional
+          {t.about.badge}
         </span>
-        <h2 className="section-header__title">Sobre Mí</h2>
+        <h2 className="section-header__title">{t.about.title}</h2>
         <p className="section-header__subtitle">
-          Ingeniero en Sistemas Computacionales enfocado en construir software fiable, mantenible y orientado a resultados de negocio.
+          {t.about.subtitle}
         </p>
       </div>
 
@@ -64,27 +52,27 @@ function AboutMe() {
 
           <div className="about-profile-card__info">
             <h3 className="about-profile-card__name">Carlos Antonio Gómez</h3>
-            <span className="about-profile-card__title">Ingeniero en Sistemas Computacionales</span>
+            <span className="about-profile-card__title">{t.about.degree}</span>
           </div>
 
           <div className="about-profile-card__details">
             <div className="detail-row">
               <FaMapMarkerAlt className="detail-icon" />
-              <span>Aguascalientes, México (Remoto / Híbrido)</span>
+              <span>{t.about.location}</span>
             </div>
             <div className="detail-row">
               <FaBuilding className="detail-icon" />
-              <span>Experiencia en ERP, Manufactura & SaaS</span>
+              <span>{t.about.domain}</span>
             </div>
             <div className="detail-row">
               <FaUserGraduate className="detail-icon" />
-              <span>Universidad Autónoma de Aguascalientes</span>
+              <span>{t.about.university}</span>
             </div>
           </div>
 
           <button className="about-profile-card__cv-btn" onClick={handleDownloadCV}>
             <FaFileDownload className="btn-icon" />
-            <span>Descargar Curriculum Vitae</span>
+            <span>{t.about.downloadCv}</span>
           </button>
         </div>
 
@@ -92,16 +80,10 @@ function AboutMe() {
         <div className="about-content">
           <div className="about-bio-card">
             <p className="bio-lead">
-              Ingeniero en Sistemas Computacionales y Desarrollador Fullstack con más de{' '}
-              <strong>4 años de experiencia comprobada</strong> diseñando, programando y optimizando soluciones web
-              y empresariales de misión crítica.
+              {t.about.bioLead}
             </p>
             <p className="bio-text">
-              Mi dominio abarca el ecosistema tecnológico de Microsoft (<strong>C#, .NET Core, Blazor, SQL Server</strong>)
-              junto con entornos modernos de JavaScript/TypeScript (<strong>React, Angular, Node.js</strong>) y el{' '}
-              <strong>Desarrollo Asistido por Inteligencia Artificial y Agentes Autónomos</strong>. Me especializo
-              en transformar reglas de negocio complejas en interfaces reactivas y APIs de alta disponibilidad,
-              aplicando Clean Code, pruebas automatizadas y contenedores Docker para la nube.
+              {t.about.bioText}
             </p>
           </div>
 

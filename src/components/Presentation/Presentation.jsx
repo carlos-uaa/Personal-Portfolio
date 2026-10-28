@@ -3,27 +3,26 @@ import { useState, useEffect } from 'react';
 import photo from '../../assets/Profile.jpg';
 import { FaLinkedin, FaGithub, FaEnvelope, FaPhone, FaArrowRight, FaDownload, FaGlobe } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { useLanguage } from '../../context/LanguageContext';
 import './Presentation.scss';
 
 /* Components import */
 import ContactChip from './ContactChip/ContactChip';
 
-const TITLES = [
-  "Fullstack Developer (.NET & React)",
-  ".NET Core & C# Specialist",
-  "React & Node.js Engineer",
-  "Associate Engineer @ Teseract.io",
-  "AI-Augmented Software Engineer",
-  "Enterprise & Cloud Solutions"
-];
-
 function Presentation() {
+  const { lang, t } = useLanguage();
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
 
+  const titles = t.hero.titles;
+
   useEffect(() => {
-    const fullText = TITLES[currentTitleIndex];
+    // Reset index if out of bounds on language change
+    if (currentTitleIndex >= titles.length) {
+      setCurrentTitleIndex(0);
+    }
+    const fullText = titles[currentTitleIndex] || titles[0];
     let timer;
 
     if (!isDeleting && displayText === fullText) {
@@ -31,7 +30,7 @@ function Presentation() {
     } else if (isDeleting && displayText === '') {
       timer = setTimeout(() => {
         setIsDeleting(false);
-        setCurrentTitleIndex((prev) => (prev + 1) % TITLES.length);
+        setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
       }, 400);
     } else {
       const speed = isDeleting ? 35 : 70;
@@ -41,7 +40,7 @@ function Presentation() {
     }
 
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, currentTitleIndex]);
+  }, [displayText, isDeleting, currentTitleIndex, titles]);
 
   const contactData = [
     {
@@ -95,15 +94,15 @@ function Presentation() {
               <span className="status-dot__ping"></span>
               <span className="status-dot__core"></span>
             </span>
-            <span>Disponible para roles Full-time & Consultoría Técnica</span>
+            <span>{t.hero.status}</span>
           </div>
 
           <div className="me">
             <h1 className="me__title">
-              Hola, soy <span className="me__name">Carlos Gómez</span>
+              {t.hero.greeting} <span className="me__name">{t.hero.name}</span>
             </h1>
             <h2 className="me__role">
-              <span className="me__role-prefix">Especialidad:</span>
+              <span className="me__role-prefix">{t.hero.rolePrefix}</span>
               <span className="me__role-typed">{displayText}</span>
               <span className="me__cursor" aria-hidden="true">|</span>
             </h2>
@@ -111,28 +110,41 @@ function Presentation() {
 
           <div className="introduction">
             <p>
-              Arquitecto y desarrollo ecosistemas digitales robustos desde cero. Especialista en{' '}
-              <span className="highlight">Ingeniería Fullstack</span> con{' '}
-              <span className="highlight">.NET Core, C#, React, Blazor y Node.js</span>, colaborando también en proyectos a la medida con{' '}
-              <a href="https://teseract.io/" target="_blank" rel="noopener noreferrer" className="highlight--alt">Teseract.io</a>. 
-              Integro <span className="highlight">IA & Agentes Autónomos</span> para acelerar
-              entregas y convertir requerimientos de <span className="highlight--alt">entornos empresariales</span> en{' '}
-              <span className="highlight">sistemas escalables, seguros y listos para producción</span>.
+              {lang === 'en' ? (
+                <>
+                  I architect and build robust digital ecosystems from the ground up. Specializing in{' '}
+                  <span className="highlight">Fullstack Engineering</span> with{' '}
+                  <span className="highlight">.NET Core, C#, React, Blazor, and Node.js</span>, while actively collaborating on bespoke software solutions with{' '}
+                  <a href="https://teseract.io/" target="_blank" rel="noopener noreferrer" className="highlight--alt">Teseract.io</a>.{' '}
+                  I integrate <span className="highlight">AI & Autonomous Agents</span> to accelerate delivery cycles and transform complex business requirements into{' '}
+                  <span className="highlight">scalable, secure, and production-ready systems</span>.
+                </>
+              ) : (
+                <>
+                  Arquitecto y desarrollo ecosistemas digitales robustos desde cero. Especialista en{' '}
+                  <span className="highlight">Ingeniería Fullstack</span> con{' '}
+                  <span className="highlight">.NET Core, C#, React, Blazor y Node.js</span>, colaborando también en proyectos a la medida con{' '}
+                  <a href="https://teseract.io/" target="_blank" rel="noopener noreferrer" className="highlight--alt">Teseract.io</a>.{' '}
+                  Integro <span className="highlight">IA & Agentes Autónomos</span> para acelerar entregas y convertir requerimientos de{' '}
+                  <span className="highlight--alt">entornos empresariales</span> en{' '}
+                  <span className="highlight">sistemas escalables, seguros y listos para producción</span>.
+                </>
+              )}
             </p>
           </div>
 
           {/* Quick CTA Actions */}
           <div className="presentation__actions">
             <a href="#projects" className="btn-primary">
-              <span>Explorar Proyectos</span>
+              <span>{t.hero.exploreProjects}</span>
               <FaArrowRight className="btn-icon" />
             </a>
             <button onClick={handleDownloadCV} className="btn-secondary">
               <FaDownload className="btn-icon" />
-              <span>Descargar CV</span>
+              <span>{t.hero.downloadCv}</span>
             </button>
             <a href="#contact" className="btn-ghost">
-              <span>Hablemos Directo</span>
+              <span>{t.hero.letsTalk}</span>
             </a>
           </div>
 
@@ -157,8 +169,8 @@ function Presentation() {
             <div className="floating-badge floating-badge--experience">
               <span className="floating-badge__icon"><HiSparkles /></span>
               <div className="floating-badge__info">
-                <strong>4+ Años</strong>
-                <span>Experiencia Profesional</span>
+                <strong>{t.hero.yearsExpBadge}</strong>
+                <span>{t.hero.yearsExpSub}</span>
               </div>
             </div>
             <div className="floating-badge floating-badge--tech">
@@ -173,20 +185,20 @@ function Presentation() {
       {/* Quick Metrics Bar for Recruiters */}
       <div className="presentation__metrics">
         <div className="metric-card">
-          <span className="metric-number">4+</span>
-          <span className="metric-label">Años Desarrollando Software</span>
+          <span className="metric-number">{t.hero.metricYears}</span>
+          <span className="metric-label">{t.hero.metricYearsLabel}</span>
         </div>
         <div className="metric-card">
-          <span className="metric-number">5+</span>
-          <span className="metric-label">Sistemas Enterprise en Producción</span>
+          <span className="metric-number">{t.hero.metricSystems}</span>
+          <span className="metric-label">{t.hero.metricSystemsLabel}</span>
         </div>
         <div className="metric-card">
-          <span className="metric-number">100%</span>
-          <span className="metric-label">Full-Lifecycle (Diseño a Despliegue)</span>
+          <span className="metric-number">{t.hero.metricLifecycle}</span>
+          <span className="metric-label">{t.hero.metricLifecycleLabel}</span>
         </div>
         <div className="metric-card">
-          <span className="metric-number">AI & QA</span>
-          <span className="metric-label">Productividad & Código Limpio</span>
+          <span className="metric-number">{t.hero.metricAi}</span>
+          <span className="metric-label">{t.hero.metricAiLabel}</span>
         </div>
       </div>
     </section>

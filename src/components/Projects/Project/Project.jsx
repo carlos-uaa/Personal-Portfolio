@@ -7,6 +7,7 @@ import { SiBlazor, SiReact, SiAngular, SiNodedotjs, SiJsonwebtokens, SiTypescrip
 import { TbBrandCSharp, TbSql } from 'react-icons/tb';
 import { IoLogoJavascript } from "react-icons/io5";
 import { LuTestTubeDiagonal } from "react-icons/lu";
+import { useLanguage } from '../../../context/LanguageContext';
 import './Project.scss';
 
 const getTechDetails = (tech) => {
@@ -34,6 +35,7 @@ function Project({ title, category, highlight, description, images, technologies
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
+  const { t } = useLanguage();
 
   const nextImage = useCallback((e) => {
     if (e) e.stopPropagation();
@@ -160,7 +162,7 @@ function Project({ title, category, highlight, description, images, technologies
                 className="project-card__read-more"
                 onClick={() => setIsExpanded(!isExpanded)}
               >
-                {isExpanded ? 'Ver menos' : 'Leer descripción completa...'}
+                {isExpanded ? t.projects.readLess : t.projects.readMore}
               </button>
             )}
           </div>
@@ -187,10 +189,10 @@ function Project({ title, category, highlight, description, images, technologies
                   target="_blank"
                   rel="noopener noreferrer"
                   className="project-card__live-btn"
-                  title={`Visitar ${title} en vivo`}
+                  title={`${t.projects.visitLive}: ${title}`}
                 >
                   <FaExternalLinkAlt className="btn-icon" />
-                  <span>Visitar Proyecto en Vivo</span>
+                  <span>{t.projects.visitLive}</span>
                 </a>
               )}
 
@@ -203,7 +205,7 @@ function Project({ title, category, highlight, description, images, technologies
                       target="_blank"
                       rel="noopener noreferrer"
                       className="project-card__github-btn"
-                      title={`Abrir repositorio ${repo.name}`}
+                      title={`GitHub: ${repo.name}`}
                     >
                       <FaGithub className="btn-icon" />
                       <span>{repo.name}</span>
